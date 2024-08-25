@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minsoc/components/my_button.dart';
 import 'package:minsoc/components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,6 +8,10 @@ class LoginPage extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
 
   LoginPage({super.key});
+
+  //login method
+
+  void login() {}
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +66,30 @@ class LoginPage extends StatelessWidget {
                       TextStyle(color: Theme.of(context).colorScheme.secondary),
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 25),
             // sign in button
+              MyButton(
+                text: "Login", onTap: login),
 
             //dont have an account? Register here
+            const SizedBox(height: 25),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Don’t have an account?", style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary
+                )),
+                GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      " Register here",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                      ), )),
+              ],
+            )
+
           ]),
         ),
       ),
